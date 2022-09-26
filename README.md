@@ -1,8 +1,10 @@
 # Exercícios
 
-- E1  (google classroom)
-- E2  (google classroom)
-- E3  (SLR no google classroom)
+As discussões dos exercícios serão feitas aqui, no fórum "Discussions" associado a este repositório. 
+
+- E1: análise sintática preditiva (entrega no google classroom)
+- E2: análise sintática LL(1) (entrega no google classroom)
+- E3: análise sintática SLR (entrega no google classroom)
 - E4
 - E5
 - E6
