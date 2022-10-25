@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 extern int yyparse();
-
+extern int result;
 int main() {
     if (yyparse()==0)
-       // printf("Parse successful!\n"); 
-       // substituir essa mensagem pelo valor da expressão interpretada.
+		{
+			printf("%d", result);
+		}
     else 
        printf("Parse failed.\n"); 
 }
