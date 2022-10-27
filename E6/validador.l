@@ -11,8 +11,7 @@
 
 %%
 
-[0-9]+ {  yylval = atoi(yytext);
-					return TOKEN_INT; }
+[0-9]+ {	return TOKEN_INT; }
 "+" 	 {  return TOKEN_PLUS; }
 "-" 	 {  return TOKEN_MINUS; }
 "*" 	 {  return TOKEN_MUL; }

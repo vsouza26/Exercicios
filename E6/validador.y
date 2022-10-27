@@ -9,6 +9,8 @@
    }
 
 	int result;
+
+  extern char* yytext;
   extern int yylex();
 %}
 
@@ -25,17 +27,17 @@
 %%
 
 program: expr TOKEN_SEMI { result = $1; }
-expr : expr TOKEN_PLUS term { $$ = $1 + $3; printf("addition"); }
+expr : expr TOKEN_PLUS term { $$ = $1 + $3; }
 		 | expr TOKEN_MINUS term { $$ = $1 - $3; }
-		 | term
+		 | term { $$ = $1; }
 		 ;
 term : term TOKEN_MUL factor { $$ = $1 * $3; }
 		 | term TOKEN_DIV factor { $$ = $1 / $3; }
-		 | factor
+		 | factor { $$ = $1; }
 		 ;
 factor : TOKEN_MINUS factor { $$ = -1*$2; }
 			 | TOKEN_OPENP expr TOKEN_OPENP { $$ = $2; }
-			 | TOKEN_INT  
+			 | TOKEN_INT { $$ = atoi(yytext); } 
 			 ;
 %%
 
