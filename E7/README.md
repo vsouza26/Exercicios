@@ -1,30 +1,23 @@
-# E7
+# E6
 
-Consulte a seção 5.4 do livro do Douglas Thain
-e use o Bison para escrever um tradutor para expressões 
-aritméticas que gera a árvore sintática abstrata para
-expressões corretas e imprime (na saída padrão)
-a expressão a partir da AST.
+Consulte a seção 5.3 do livro do Douglas Thain
+e use o Bison para escrever um interpretador para expressões 
+aritméticas. 
 
-- Crie o arquivo _expression-tree.y_ copiando o arquivo
-_interpretador.y_ do exercício E6, 
-substituindo as  ações semânticas das regras de produção
-para gerar a AST.
+- Crie o arquivo _interpretador.y_ copiando
+o arquivo _validador.y_ do exercício E5, 
+adicionando  ações semânticas às regras de produção.
+A sua resposta deverá estar no arquivo _interpretador.y_
 
-A sua resposta deverá estar no arquivo _expression-tree.y_
+- Reutilizar o analisador léxico implementado para o exercício E5.
 
-- Reutilizar o analisador léxico implementado para o exercício E6.i
+- Modificar o arquivo main.c para mostrar em stdout: 
 
-- Criar os arquivos expr.h e expr.c com o código mostrado na seção 5.4.
+   - o valor de cada expressão correta digitada na linha de comando, 
+ou 
+   - mensagem de erro em caso de erro léxico/sintático na expressão analisada.
 
-- Modificar o arquivo main.c para definir e chamar uma função 
-_expr_print_ que percorre a AST criada (in-order) e 
-mostra a representação textual da árvore na saída padrão.
-
-Obs: 
-- Lembre de usar ```bison --defines=token.h expression-tree.y```
+Obs: Lembre de usa ```bison --defines=token.h interpretador.y```
 para gerar o arquivo _token.h_.
-- A função _expr_print_ do livro possivelmente mostrará mais parênteses do que os usados na expressão lida.
-
 
 
