@@ -1,14 +1,13 @@
 #include <stdio.h>
-
+#include "expr.h"
 extern int yyparse();
-
-// definir função expr_print
-
-
-int main() {
-    if (yyparse()==0)
-       // printf("Parse successful!\n"); 
-       // substituir essa mensagem pela chamada à função expr_print.
-    else 
-       printf("Parse failed.\n"); 
+extern struct expr *parser_result;
+int main()
+{
+  if (yyparse() == 0)
+  {
+    expr_print(parser_result);
+  }
+  else
+    printf("Parse failed.\n");
 }
